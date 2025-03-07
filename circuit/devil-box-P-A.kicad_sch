@@ -4,6 +4,11 @@
 	(generator_version "8.0")
 	(uuid "c6112e97-0a50-4811-b9a7-b9d8fe3a9480")
 	(paper "A4")
+	(title_block
+		(title "Devil box")
+		(date "2025-01-10")
+		(rev "A")
+	)
 	(lib_symbols
 		(symbol "Device:Battery"
 			(pin_numbers hide)
@@ -223,6 +228,142 @@
 				)
 			)
 		)
+		(symbol "Device:C"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C_Polarized"
 			(pin_numbers hide)
 			(pin_names
@@ -381,23 +522,22 @@
 				)
 			)
 		)
-		(symbol "Device:LED_Filled"
-			(pin_numbers hide)
+		(symbol "Device:LED_Series"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "D"
-				(at 0 2.54 0)
+				(at 0 5.715 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "LED_Filled"
-				(at 0 -2.54 0)
+			(property "Value" "LED_Series"
+				(at 0 3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -405,7 +545,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 0 0 0)
+				(at -2.54 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -414,7 +554,7 @@
 				)
 			)
 			(property "Datasheet" "~"
-				(at 0 0 0)
+				(at -2.54 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -422,7 +562,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Light emitting diode, filled shape"
+			(property "Description" "Several LEDs in series"
 				(at 0 0 0)
 				(effects
 					(font
@@ -449,22 +589,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_Filled_0_1"
+			(symbol "LED_Series_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
+						(xy -3.81 0) (xy -1.016 0)
 					)
 					(stroke
 						(width 0)
@@ -476,19 +604,19 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy -3.683 -1.27) (xy -3.683 1.27)
 					)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy -0.508 0) (xy -0.762 0)
 					)
 					(stroke
 						(width 0)
@@ -500,7 +628,115 @@
 				)
 				(polyline
 					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+						(xy 0.127 0) (xy -0.127 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.143 -1.27) (xy 1.143 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.143 -1.27) (xy -1.143 1.27) (xy -3.683 0) (xy -1.143 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.683 -1.27) (xy 3.683 1.27) (xy 1.143 0) (xy 3.683 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.302 1.397) (xy -1.778 2.921) (xy -2.54 2.921) (xy -1.778 2.921) (xy -1.778 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 1.397) (xy -0.508 2.921) (xy -1.27 2.921) (xy -0.508 2.921) (xy -0.508 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 1.397) (xy 3.048 2.921) (xy 2.286 2.921) (xy 3.048 2.921) (xy 3.048 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 1.397) (xy 4.318 2.921) (xy 3.556 2.921) (xy 4.318 2.921) (xy 4.318 2.159)
 					)
 					(stroke
 						(width 0)
@@ -511,9 +747,9 @@
 					)
 				)
 			)
-			(symbol "LED_Filled_1_1"
+			(symbol "LED_Series_1_1"
 				(pin passive line
-					(at -3.81 0 0)
+					(at -6.35 0 0)
 					(length 2.54)
 					(name "K"
 						(effects
@@ -531,7 +767,7 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
+					(at 6.35 0 180)
 					(length 2.54)
 					(name "A"
 						(effects
@@ -1828,7 +2064,7 @@
 				)
 			)
 		)
-		(symbol "Transistor_FET:BS170"
+		(symbol "Transistor_FET:BSS123"
 			(pin_names hide)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1842,7 +2078,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "BS170"
+			(property "Value" "BSS123"
 				(at 5.08 0 0)
 				(effects
 					(font
@@ -1851,7 +2087,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 				(at 5.08 -1.905 0)
 				(effects
 					(font
@@ -1862,7 +2098,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+			(property "Datasheet" "http://www.diodes.com/assets/Datasheets/ds30366.pdf"
 				(at 5.08 -3.81 0)
 				(effects
 					(font
@@ -1872,7 +2108,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+			(property "Description" "0.17A Id, 100V Vds, N-Channel MOSFET, SOT-23"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1890,7 +2126,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "TO?92*"
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1899,7 +2135,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "BS170_0_1"
+			(symbol "BSS123_0_1"
 				(polyline
 					(pts
 						(xy 0.254 0) (xy -2.54 0)
@@ -2066,11 +2302,11 @@
 					)
 				)
 			)
-			(symbol "BS170_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
+			(symbol "BSS123_1_1"
+				(pin input line
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "D"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2085,10 +2321,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -5.08 0 0)
+				(pin passive line
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "G"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2104,9 +2340,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "S"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2426,6 +2662,12 @@
 		(uuid "0b91fcf2-57c6-461b-b07d-31eb1e39e097")
 	)
 	(junction
+		(at 152.4 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1a47fdf7-2b3e-42d3-9ac0-a51395faba76")
+	)
+	(junction
 		(at 137.16 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2456,7 +2698,7 @@
 		(uuid "38cc8e26-be61-4065-bb73-1211aa4cfad9")
 	)
 	(junction
-		(at 168.91 67.31)
+		(at 182.88 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "45c8faa8-e2e6-40e2-b8c5-afb0bc1fc659")
@@ -2468,22 +2710,22 @@
 		(uuid "47052a98-6033-4a2f-b129-0939816136c7")
 	)
 	(junction
-		(at 166.37 142.24)
+		(at 180.34 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4a3652c9-09d6-479d-baee-a1d21a0855d1")
+	)
+	(junction
+		(at 152.4 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "603d9072-b0c1-44dd-897d-a0ad5729fdaa")
 	)
 	(junction
 		(at 85.09 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "771d2b7e-0a64-4d76-9b2d-3c863299f42a")
-	)
-	(junction
-		(at 166.37 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7d0b2a54-81ba-40d2-ac61-26eebd8fce9c")
 	)
 	(junction
 		(at 137.16 142.24)
@@ -2498,6 +2740,12 @@
 		(uuid "89f5b1b5-f6a0-4a08-b9ef-80715bdc239b")
 	)
 	(junction
+		(at 180.34 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8affb14c-af09-484e-b9a6-ff64a2e2d7dc")
+	)
+	(junction
 		(at 113.03 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2510,16 +2758,16 @@
 		(uuid "927b1862-e774-4dda-b2e1-ee7c7af2244b")
 	)
 	(junction
+		(at 182.88 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94b9d723-f987-434b-b505-75c595bbd916")
+	)
+	(junction
 		(at 113.03 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9dbf9433-09c7-4582-8100-65399b0b9844")
-	)
-	(junction
-		(at 168.91 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b625263e-0d23-4c60-b157-850888e4aeb1")
 	)
 	(junction
 		(at 85.09 40.64)
@@ -2528,7 +2776,7 @@
 		(uuid "bdce7921-03b8-471d-aad5-d43b55ecb845")
 	)
 	(junction
-		(at 163.83 142.24)
+		(at 177.8 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c716a913-aea7-4578-aea0-143a72145564")
@@ -2552,7 +2800,7 @@
 		(uuid "dff499da-64dc-46c3-9300-46a40f1759ad")
 	)
 	(junction
-		(at 198.12 67.31)
+		(at 212.09 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e10b2e0e-28bf-479b-a54f-d270a208c8da")
@@ -2564,100 +2812,110 @@
 		(uuid "f410fed9-e1a2-4fe5-9774-d4c9182c806f")
 	)
 	(no_connect
-		(at 179.07 116.84)
+		(at 193.04 116.84)
 		(uuid "04ab6efe-87de-4d0a-a9f2-d4d69b713d3d")
 	)
 	(no_connect
-		(at 179.07 114.3)
+		(at 193.04 114.3)
 		(uuid "067fd05e-0531-4d76-9742-e26e9c77a270")
 	)
 	(no_connect
-		(at 153.67 124.46)
+		(at 167.64 124.46)
 		(uuid "0b41e667-1b4d-43e9-89ef-93038bb9575b")
 	)
 	(no_connect
-		(at 153.67 96.52)
+		(at 167.64 96.52)
 		(uuid "127b5e2b-dce8-45f1-8ba0-ef9d8c4f1926")
 	)
 	(no_connect
-		(at 153.67 114.3)
+		(at 167.64 114.3)
 		(uuid "17f780ba-03e2-4e14-bce8-6b557d022eb4")
 	)
 	(no_connect
-		(at 153.67 99.06)
+		(at 167.64 99.06)
 		(uuid "1ed963e7-afba-48f1-8f6d-1fc95843c491")
 	)
 	(no_connect
-		(at 161.29 86.36)
+		(at 175.26 86.36)
 		(uuid "427a8da8-1cc5-46e6-8560-1fd63fa6b357")
 	)
 	(no_connect
-		(at 153.67 116.84)
+		(at 167.64 116.84)
 		(uuid "42daf3de-dc0c-4b71-a54e-05a76985bcd9")
 	)
 	(no_connect
-		(at 179.07 101.6)
+		(at 193.04 101.6)
 		(uuid "4e6d7a28-7086-4c33-94a1-060e305bb1ca")
 	)
 	(no_connect
-		(at 179.07 104.14)
+		(at 193.04 104.14)
 		(uuid "59815464-7fae-42b9-ba01-d6e4edd3707c")
 	)
 	(no_connect
-		(at 153.67 119.38)
+		(at 167.64 119.38)
 		(uuid "5ad5eeb6-4bd7-45ba-bd25-a1aa8286734c")
 	)
 	(no_connect
-		(at 179.07 119.38)
+		(at 193.04 119.38)
 		(uuid "79859e29-8d44-4e54-9eb5-785e9f5dd6f6")
 	)
 	(no_connect
-		(at 179.07 96.52)
+		(at 193.04 96.52)
 		(uuid "7f097867-3265-45fd-94cf-81d1ac512659")
 	)
 	(no_connect
-		(at 179.07 111.76)
+		(at 193.04 111.76)
 		(uuid "8f62c378-3ef4-442c-9072-335b4b917bfc")
 	)
 	(no_connect
-		(at 153.67 121.92)
+		(at 167.64 121.92)
 		(uuid "97cd8655-084e-4c60-83be-0c87f4e27751")
 	)
 	(no_connect
-		(at 153.67 127)
+		(at 167.64 127)
 		(uuid "9a080d2b-f65e-46d7-a0cc-a77772ae9354")
 	)
 	(no_connect
-		(at 153.67 106.68)
+		(at 167.64 106.68)
 		(uuid "a7149f9f-0b71-40a8-942f-71cfd6fe8bd0")
 	)
 	(no_connect
-		(at 163.83 86.36)
+		(at 177.8 86.36)
 		(uuid "be52c87f-7e91-4a2d-8cbd-4de25b54a718")
 	)
 	(no_connect
-		(at 179.07 127)
+		(at 193.04 127)
 		(uuid "d9d30508-f411-45ea-bdae-bf9405e301d5")
 	)
 	(no_connect
-		(at 179.07 129.54)
+		(at 193.04 129.54)
 		(uuid "dbb0f9d8-f09e-4c7a-af95-b38fbe46beb8")
 	)
 	(no_connect
-		(at 153.67 111.76)
+		(at 167.64 111.76)
 		(uuid "dd933e7f-5b5d-46b0-977c-b499292796cb")
 	)
 	(no_connect
-		(at 179.07 99.06)
+		(at 193.04 99.06)
 		(uuid "e8cce7d5-7300-4a44-824c-f65c3f34d046")
 	)
 	(no_connect
-		(at 179.07 121.92)
+		(at 193.04 121.92)
 		(uuid "ed8902ce-094a-44dd-87f7-114ecac14160")
 	)
 	(no_connect
-		(at 179.07 106.68)
+		(at 193.04 106.68)
 		(uuid "fbe37f6a-edd6-4218-9701-578c43aecf19")
+	)
+	(wire
+		(pts
+			(xy 152.4 67.31) (xy 182.88 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "048eb707-89b2-4d77-8fa4-01d9d9837fbe")
 	)
 	(wire
 		(pts
@@ -2671,7 +2929,17 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 109.22) (xy 179.07 109.22)
+			(xy 180.34 138.43) (xy 180.34 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10293cd4-24e2-4a3d-a6f3-2f5d0174f98a")
+	)
+	(wire
+		(pts
+			(xy 212.09 109.22) (xy 193.04 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2701,7 +2969,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 129.54) (xy 209.55 142.24)
+			(xy 223.52 129.54) (xy 223.52 142.24)
 		)
 		(stroke
 			(width 0)
@@ -2741,7 +3009,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 67.31) (xy 168.91 67.31)
+			(xy 137.16 67.31) (xy 152.4 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2781,7 +3049,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 142.24) (xy 166.37 142.24)
+			(xy 177.8 142.24) (xy 180.34 142.24)
 		)
 		(stroke
 			(width 0)
@@ -2841,7 +3109,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 67.31) (xy 198.12 67.31)
+			(xy 182.88 67.31) (xy 212.09 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2881,7 +3149,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 129.54) (xy 153.67 129.54)
+			(xy 129.54 129.54) (xy 167.64 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2901,7 +3169,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 142.24) (xy 163.83 142.24)
+			(xy 137.16 142.24) (xy 152.4 142.24)
 		)
 		(stroke
 			(width 0)
@@ -2911,7 +3179,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 67.31) (xy 198.12 67.31)
+			(xy 223.52 67.31) (xy 212.09 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2941,17 +3209,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 83.82) (xy 168.91 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "63a1e93a-6d2f-4a9d-8560-cc4c1fee163c")
-	)
-	(wire
-		(pts
-			(xy 209.55 129.54) (xy 214.63 129.54)
+			(xy 223.52 129.54) (xy 228.6 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3001,7 +3259,17 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 67.31) (xy 168.91 83.82)
+			(xy 152.4 113.03) (xy 152.4 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7518d873-4414-492e-a1ac-4e31108108f5")
+	)
+	(wire
+		(pts
+			(xy 182.88 67.31) (xy 182.88 83.82)
 		)
 		(stroke
 			(width 0)
@@ -3021,7 +3289,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 142.24) (xy 163.83 137.16)
+			(xy 177.8 142.24) (xy 177.8 137.16)
 		)
 		(stroke
 			(width 0)
@@ -3041,7 +3309,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 99.06) (xy 198.12 100.33)
+			(xy 212.09 96.52) (xy 212.09 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3051,7 +3319,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 107.95) (xy 198.12 109.22)
+			(xy 212.09 107.95) (xy 212.09 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3071,7 +3339,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 127) (xy 214.63 127)
+			(xy 223.52 127) (xy 228.6 127)
 		)
 		(stroke
 			(width 0)
@@ -3081,23 +3349,13 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 124.46) (xy 214.63 124.46)
+			(xy 193.04 124.46) (xy 228.6 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "876c08bc-4546-484b-b788-5b720a8ba38a")
-	)
-	(wire
-		(pts
-			(xy 166.37 139.7) (xy 166.37 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a4c640c-b504-47ed-aef2-7ffa54fcba5b")
 	)
 	(wire
 		(pts
@@ -3131,7 +3389,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 137.16) (xy 166.37 139.7)
+			(xy 180.34 137.16) (xy 180.34 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3158,6 +3416,16 @@
 			(type default)
 		)
 		(uuid "a814615e-8389-46e8-bd12-3ea3e3ac7b2d")
+	)
+	(wire
+		(pts
+			(xy 152.4 67.31) (xy 152.4 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8b3fc2c-6b93-41ab-b73d-1c6d8db8194d")
 	)
 	(wire
 		(pts
@@ -3241,7 +3509,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 142.24) (xy 209.55 142.24)
+			(xy 180.34 142.24) (xy 223.52 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3271,13 +3539,23 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 67.31) (xy 198.12 83.82)
+			(xy 212.09 67.31) (xy 212.09 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e0f14ffa-38fb-4c8d-87fb-fab75ec93654")
+	)
+	(wire
+		(pts
+			(xy 182.88 83.82) (xy 182.88 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e155f1a4-71dc-41ec-8ee1-d00e2af65156")
 	)
 	(wire
 		(pts
@@ -3301,7 +3579,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 67.31) (xy 209.55 127)
+			(xy 223.52 67.31) (xy 223.52 127)
 		)
 		(stroke
 			(width 0)
@@ -3318,6 +3596,16 @@
 			(type default)
 		)
 		(uuid "e92fa006-e161-4714-aeb4-8310cecbb5b1")
+	)
+	(wire
+		(pts
+			(xy 152.4 142.24) (xy 177.8 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee74d340-479f-40bd-869e-a3f04a8a134e")
 	)
 	(wire
 		(pts
@@ -3380,7 +3668,7 @@
 		(uuid "fb94a3ec-739e-4053-9afe-54c4a7bb0ddd")
 	)
 	(label "PB3_OC2A"
-		(at 182.88 124.46 0)
+		(at 196.85 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3389,8 +3677,28 @@
 		)
 		(uuid "7bee48b1-d8cb-467f-b9b2-4cdfd94bc268")
 	)
+	(label "GND"
+		(at 146.05 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "869ac583-04ac-44b4-a86a-e7ced5f471fe")
+	)
+	(label "BAT+"
+		(at 52.07 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afd523fd-b56b-43e5-af70-d356bcd7f5eb")
+	)
 	(label "OC0B"
-		(at 182.88 109.22 0)
+		(at 196.85 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3398,6 +3706,16 @@
 			(justify left bottom)
 		)
 		(uuid "e79b41ff-a1d3-4f35-9f00-89f594738131")
+	)
+	(label "Vcc"
+		(at 146.05 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ed48c0d5-8a60-4e11-9b82-5ac0c841d8e8")
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
@@ -3428,7 +3746,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0617_L17.0mm_D6.0mm_P20.32mm_Horizontal"
 			(at 60.96 87.63 0)
 			(effects
 				(font
@@ -3471,35 +3789,37 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 198.12 95.25 90)
+		(lib_name "PWR_FLAG_1")
+		(lib_id "power:PWR_FLAG")
+		(at 182.88 83.82 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "26390c10-41cf-4247-914c-1a65bbe7b1ef")
-		(property "Reference" "D2"
-			(at 201.041 95.6254 90)
+		(uuid "26917372-3794-4549-baa1-ab034d34e150")
+		(property "Reference" "#FLG02"
+			(at 184.785 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Value" "RED"
-			(at 201.041 98.0496 90)
+		(property "Value" "PWR_FLAG"
+			(at 186.055 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 198.12 95.25 0)
+		(property "Footprint" ""
+			(at 182.88 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3508,7 +3828,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 95.25 0)
+			(at 182.88 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3516,8 +3836,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 198.12 95.25 0)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 182.88 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3526,15 +3846,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "2321cf5f-f1b0-4bf2-b3ed-598df1e6db4a")
-		)
-		(pin "2"
-			(uuid "c9d4dcc7-987d-48be-8897-9bbeb9e8dbec")
+			(uuid "0b96834b-3b15-4ba7-86d2-1bcd816e754b")
 		)
 		(instances
-			(project "devil-box-compl"
+			(project ""
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "D2")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -3546,7 +3863,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32c90b55-b12d-47d6-8cff-8426869fe7e4")
@@ -3568,7 +3885,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm"
 			(at 138.1252 113.03 0)
 			(effects
 				(font
@@ -3611,70 +3928,151 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 198.12 87.63 90)
+		(lib_id "Transistor_FET:BSS123")
+		(at 78.74 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4cae0e09-3d2d-4187-a7ad-c1a76db56252")
-		(property "Reference" "D1"
-			(at 201.041 88.0054 90)
+		(uuid "3ae1d76e-62ca-45ba-ab03-764b4fc926ae")
+		(property "Reference" "T1"
+			(at 74.168 104.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "RED"
-			(at 201.041 90.4296 90)
+		(property "Value" "BSS123"
+			(at 70.612 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 198.12 87.63 0)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 83.82 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.diodes.com/assets/Datasheets/ds30366.pdf"
+			(at 83.82 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.17A Id, 100V Vds, N-Channel MOSFET, SOT-23"
+			(at 78.74 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "~"
-			(at 198.12 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 198.12 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b6ece59f-f21c-4c27-9602-0a0a78b754b4")
 		)
 		(pin "2"
-			(uuid "c8d1408d-e799-4880-8d6c-d53391b92a29")
+			(uuid "11a8ad96-05ef-4d49-a424-dc50872260af")
+		)
+		(pin "1"
+			(uuid "6d8c0494-7fc4-4de9-9210-4cea9b532bd5")
+		)
+		(pin "3"
+			(uuid "8a3902c7-d568-48d9-be3e-b819e2211caf")
+		)
+		(instances
+			(project ""
+				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
+					(reference "T1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:BSS123")
+		(at 119.38 129.54 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fbad4a1-3558-4aa4-90ac-3dad5c490fa1")
+		(property "Reference" "T5"
+			(at 123.952 122.682 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BSS123"
+			(at 127.508 125.984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 114.3 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.diodes.com/assets/Datasheets/ds30366.pdf"
+			(at 114.3 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.17A Id, 100V Vds, N-Channel MOSFET, SOT-23"
+			(at 119.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e659012f-10dd-4afe-8ee2-910b2387484c")
+		)
+		(pin "1"
+			(uuid "dbc8741d-a0ac-418f-86a0-90fe98acb399")
+		)
+		(pin "3"
+			(uuid "795f1b99-aacc-4269-8000-f6eebb776ab3")
 		)
 		(instances
 			(project "devil-box-compl"
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "D1")
+					(reference "T5")
 					(unit 1)
 				)
 			)
@@ -3692,7 +4090,7 @@
 		(fields_autoplaced yes)
 		(uuid "5345183a-54af-4169-810d-ed5c187dfc7c")
 		(property "Reference" "T4"
-			(at 115.697 53.3978 0)
+			(at 115.697 53.3979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3700,7 +4098,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IRF9Z34N"
+		(property "Value" "IRF9540N"
 			(at 115.697 55.8221 0)
 			(effects
 				(font
@@ -3709,7 +4107,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown"
 			(at 115.57 52.705 0)
 			(effects
 				(font
@@ -3758,56 +4156,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:BS170")
-		(at 119.38 129.54 0)
-		(mirror y)
+		(lib_id "Device:LED_Series")
+		(at 212.09 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5bd13f9a-ee5b-4255-b3d1-3d0c3f29cab9")
-		(property "Reference" "T5"
-			(at 121.92 125.73 0)
+		(fields_autoplaced yes)
+		(uuid "60ea6490-0dee-41c1-9015-aee523e2240c")
+		(property "Reference" "D3"
+			(at 214.122 88.7038 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "BS170"
-			(at 124.46 134.62 0)
+		(property "Value" "LED eyes"
+			(at 214.122 91.1281 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 114.3 131.445 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 212.09 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
-					(italic yes)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
-			(at 114.3 133.35 0)
+		(property "Datasheet" "~"
+			(at 212.09 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 119.38 129.54 0)
+		(property "Description" "Several LEDs in series"
+			(at 212.09 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3816,25 +4211,161 @@
 			)
 		)
 		(pin "2"
-			(uuid "1b525cdf-7b84-4ef3-8e0f-6c21aa120097")
+			(uuid "38ede482-27c5-4fcb-a7a3-e9d56151ca25")
 		)
 		(pin "1"
-			(uuid "92f8ca84-76df-4aa5-922b-6a5d1e488f5d")
-		)
-		(pin "3"
-			(uuid "4cf3f505-4cb1-48c1-9c31-6395170a7c18")
+			(uuid "23834390-89f0-4d2d-91ef-22be14c14c2e")
 		)
 		(instances
-			(project "devil-box-compl"
+			(project ""
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "T5")
+					(reference "D3")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:BS170")
+		(lib_id "Device:C")
+		(at 152.4 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "698ab4fd-5c33-4b4a-b330-1b8b9818289f")
+		(property "Reference" "C2"
+			(at 155.321 108.0078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 155.321 110.4321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 153.3652 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 152.4 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 152.4 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e3bdc663-d751-4822-afce-897eee21812d")
+		)
+		(pin "1"
+			(uuid "e9271666-58c9-4d71-81b9-fcdcb2cdaee7")
+		)
+		(instances
+			(project ""
+				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "PWR_FLAG_1")
+		(lib_id "power:PWR_FLAG")
+		(at 180.34 138.43 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6cf21566-ee74-4ada-b961-46c388267348")
+		(property "Reference" "#FLG01"
+			(at 182.245 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 183.515 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 180.34 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 180.34 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "68838200-d437-4531-b0fa-8e078d4ef564")
+		)
+		(instances
+			(project "devil-box-compl"
+				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
+					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:BSS123")
 		(at 91.44 111.76 0)
 		(mirror y)
 		(unit 1)
@@ -3842,9 +4373,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "66629153-475a-4342-99d9-2bb9a48a585d")
+		(uuid "71641365-121d-4137-9c8d-ec26b68ab8f2")
 		(property "Reference" "T2"
-			(at 93.98 107.95 0)
+			(at 96.012 104.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3852,8 +4383,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BS170"
-			(at 96.52 118.11 0)
+		(property "Value" "BSS123"
+			(at 99.568 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3861,7 +4392,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 86.36 113.665 0)
 			(effects
 				(font
@@ -3872,7 +4403,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+		(property "Datasheet" "http://www.diodes.com/assets/Datasheets/ds30366.pdf"
 			(at 86.36 115.57 0)
 			(effects
 				(font
@@ -3882,7 +4413,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0.17A Id, 100V Vds, N-Channel MOSFET, SOT-23"
 			(at 91.44 111.76 0)
 			(effects
 				(font
@@ -3892,13 +4423,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "8a372b2f-88f2-45bf-b408-9cf7a6fcd2e2")
+			(uuid "471d75ef-f4ff-40d3-9258-d0eb0ae0b05b")
 		)
 		(pin "1"
-			(uuid "77e3d1ae-3b65-4cd8-a088-be107615ae15")
+			(uuid "2154de2a-e648-4693-8b35-ef751d245587")
 		)
 		(pin "3"
-			(uuid "7442133f-f265-4f02-8c38-93e3f886fbfc")
+			(uuid "e7ae884a-b1c7-4624-9af0-8bca2cc2a550")
 		)
 		(instances
 			(project "devil-box-compl"
@@ -3911,7 +4442,7 @@
 	)
 	(symbol
 		(lib_id "MCU_Module:Arduino_Nano_v3.x")
-		(at 166.37 111.76 0)
+		(at 180.34 111.76 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3920,7 +4451,7 @@
 		(dnp no)
 		(uuid "9a716438-29d1-40c8-916a-2db5fc9638ed")
 		(property "Reference" "A1"
-			(at 161.6359 136.3401 0)
+			(at 175.6059 136.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3929,7 +4460,7 @@
 			)
 		)
 		(property "Value" "Arduino_Nano_v3.x"
-			(at 166.37 121.92 90)
+			(at 180.34 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3937,8 +4468,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Module:Arduino_Nano"
-			(at 166.37 111.76 0)
+		(property "Footprint" "Module:Arduino_Nano_WithMountingHoles"
+			(at 180.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3948,7 +4479,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf"
-			(at 166.37 111.76 0)
+			(at 180.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3957,7 +4488,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 166.37 111.76 0)
+			(at 180.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4065,156 +4596,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:BS170")
-		(at 78.74 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a066114a-9bbf-435b-97fc-f903a1896910")
-		(property "Reference" "T1"
-			(at 76.2 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BS170"
-			(at 73.66 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 83.82 113.665 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
-			(at 83.82 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 78.74 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b48805e3-e194-4ee1-8bc8-7c291318fc1a")
-		)
-		(pin "1"
-			(uuid "5438a575-f0e5-413c-85b8-6d83e71db29f")
-		)
-		(pin "3"
-			(uuid "f2d59572-eb98-468b-9e1a-d4f38a1e3c6d")
-		)
-		(instances
-			(project "devil-box-compl"
-				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "T1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:BS170")
-		(at 106.68 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a337e12a-4a3d-43d8-a0f3-eea59acf14cd")
-		(property "Reference" "T3"
-			(at 102.87 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BS170"
-			(at 100.33 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 111.76 131.445 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
-			(at 111.76 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 106.68 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1ba4cd16-e9a0-42b8-ad70-ff5eb1d7aa7c")
-		)
-		(pin "1"
-			(uuid "5a87cd75-414b-4f96-b7b1-1be591f9cdf5")
-		)
-		(pin "3"
-			(uuid "fb6589ba-a954-4e41-a819-c128a1351567")
-		)
-		(instances
-			(project "devil-box-compl"
-				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "T3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 85.09 46.99 0)
 		(mirror x)
@@ -4233,7 +4614,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "10k"
 			(at 85.09 46.99 90)
 			(effects
 				(font
@@ -4241,7 +4622,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 83.312 46.99 90)
 			(effects
 				(font
@@ -4284,74 +4665,6 @@
 		)
 	)
 	(symbol
-		(lib_name "PWR_FLAG_1")
-		(lib_id "power:PWR_FLAG")
-		(at 168.91 83.82 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b35a12cb-2f12-497b-a714-77837eb1b3e3")
-		(property "Reference" "#FLG01"
-			(at 170.815 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 173.0431 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 168.91 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 168.91 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 168.91 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "84620f59-7e8c-4844-8da4-0e270d5dc05d")
-		)
-		(instances
-			(project "devil-box-P-A"
-				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 66.04 129.54 0)
 		(mirror x)
@@ -4370,7 +4683,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "10k"
 			(at 66.04 129.54 90)
 			(effects
 				(font
@@ -4378,7 +4691,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 64.262 129.54 90)
 			(effects
 				(font
@@ -4508,7 +4821,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "10k"
 			(at 129.54 135.89 90)
 			(effects
 				(font
@@ -4516,7 +4829,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 127.762 135.89 90)
 			(effects
 				(font
@@ -4585,7 +4898,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 111.252 87.63 90)
 			(effects
 				(font
@@ -4629,7 +4942,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 222.25 127 0)
+		(at 236.22 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4638,7 +4951,7 @@
 		(fields_autoplaced yes)
 		(uuid "f4041dbd-3979-4252-b8aa-aad6640edce6")
 		(property "Reference" "M1"
-			(at 230.6098 125.3545 0)
+			(at 244.5798 125.3545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4647,7 +4960,7 @@
 			)
 		)
 		(property "Value" "Motor_Servo"
-			(at 230.6098 127.7787 0)
+			(at 244.5798 127.7787 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4656,7 +4969,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 222.25 131.826 0)
+			(at 236.22 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4665,7 +4978,7 @@
 			)
 		)
 		(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
-			(at 222.25 131.826 0)
+			(at 236.22 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4674,7 +4987,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 222.25 127 0)
+			(at 236.22 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4702,7 +5015,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 198.12 104.14 0)
+		(at 212.09 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4710,7 +5023,7 @@
 		(dnp no)
 		(uuid "f541ac13-0aec-4d0a-ad12-68b7879abfd5")
 		(property "Reference" "R5"
-			(at 199.898 102.9279 0)
+			(at 213.868 102.9279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4719,15 +5032,15 @@
 			)
 		)
 		(property "Value" "150"
-			(at 198.12 104.14 90)
+			(at 212.09 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
-			(at 196.342 104.14 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 210.312 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4736,7 +5049,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 104.14 0)
+			(at 212.09 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4745,7 +5058,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 198.12 104.14 0)
+			(at 212.09 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4769,18 +5082,55 @@
 		)
 	)
 	(symbol
-		(lib_name "PWR_FLAG_1")
-		(lib_id "power:PWR_FLAG")
-		(at 166.37 139.7 270)
+		(lib_id "Transistor_FET:BSS123")
+		(at 106.68 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ff7544b6-282d-4264-b3ae-a7522b782865")
-		(property "Reference" "#FLG03"
-			(at 168.275 139.7 0)
+		(uuid "f8228702-71cd-4d8b-9be6-cb1a868ab788")
+		(property "Reference" "T3"
+			(at 102.108 122.682 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BSS123"
+			(at 98.552 125.984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 111.76 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.diodes.com/assets/Datasheets/ds30366.pdf"
+			(at 111.76 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.17A Id, 100V Vds, N-Channel MOSFET, SOT-23"
+			(at 106.68 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4788,49 +5138,19 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "PWR_FLAG"
-			(at 170.5031 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "2"
+			(uuid "6776c76b-8f74-4372-8316-b29e1dedbead")
 		)
 		(pin "1"
-			(uuid "dd77f7f2-88d6-4538-a9da-7104efdf8d7d")
+			(uuid "322c273d-624b-43e8-a786-b6dc921f0c7b")
+		)
+		(pin "3"
+			(uuid "6684db37-a635-4914-84ac-b02b8e92eec3")
 		)
 		(instances
-			(project ""
+			(project "devil-box-compl"
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "#FLG03")
+					(reference "T3")
 					(unit 1)
 				)
 			)
