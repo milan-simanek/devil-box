@@ -521,23 +521,22 @@
 				)
 			)
 		)
-		(symbol "Device:LED_Filled"
-			(pin_numbers hide)
+		(symbol "Device:LED_Series"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "D"
-				(at 0 2.54 0)
+				(at 0 5.715 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "LED_Filled"
-				(at 0 -2.54 0)
+			(property "Value" "LED_Series"
+				(at 0 3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -545,7 +544,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 0 0 0)
+				(at -2.54 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -554,7 +553,7 @@
 				)
 			)
 			(property "Datasheet" "~"
-				(at 0 0 0)
+				(at -2.54 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -562,7 +561,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Light emitting diode, filled shape"
+			(property "Description" "Several LEDs in series"
 				(at 0 0 0)
 				(effects
 					(font
@@ -589,22 +588,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_Filled_0_1"
+			(symbol "LED_Series_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
+						(xy -3.81 0) (xy -1.016 0)
 					)
 					(stroke
 						(width 0)
@@ -616,19 +603,19 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy -3.683 -1.27) (xy -3.683 1.27)
 					)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy -0.508 0) (xy -0.762 0)
 					)
 					(stroke
 						(width 0)
@@ -640,7 +627,115 @@
 				)
 				(polyline
 					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+						(xy 0.127 0) (xy -0.127 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.143 -1.27) (xy 1.143 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.143 -1.27) (xy -1.143 1.27) (xy -3.683 0) (xy -1.143 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.683 -1.27) (xy 3.683 1.27) (xy 1.143 0) (xy 3.683 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.302 1.397) (xy -1.778 2.921) (xy -2.54 2.921) (xy -1.778 2.921) (xy -1.778 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 1.397) (xy -0.508 2.921) (xy -1.27 2.921) (xy -0.508 2.921) (xy -0.508 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 1.397) (xy 3.048 2.921) (xy 2.286 2.921) (xy 3.048 2.921) (xy 3.048 2.159)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 1.397) (xy 4.318 2.921) (xy 3.556 2.921) (xy 4.318 2.921) (xy 4.318 2.159)
 					)
 					(stroke
 						(width 0)
@@ -651,9 +746,9 @@
 					)
 				)
 			)
-			(symbol "LED_Filled_1_1"
+			(symbol "LED_Series_1_1"
 				(pin passive line
-					(at -3.81 0 0)
+					(at -6.35 0 0)
 					(length 2.54)
 					(name "K"
 						(effects
@@ -671,7 +766,7 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
+					(at 6.35 0 180)
 					(length 2.54)
 					(name "A"
 						(effects
@@ -3203,7 +3298,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 73.66) (xy 228.6 74.93)
+			(xy 228.6 71.12) (xy 228.6 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3748,76 +3843,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 228.6 69.85 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "26390c10-41cf-4247-914c-1a65bbe7b1ef")
-		(property "Reference" "D2"
-			(at 231.521 70.2254 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RED"
-			(at 231.521 72.6496 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 228.6 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2321cf5f-f1b0-4bf2-b3ed-598df1e6db4a")
-		)
-		(pin "2"
-			(uuid "c9d4dcc7-987d-48be-8897-9bbeb9e8dbec")
-		)
-		(instances
-			(project "devil-box"
-				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 196.85 114.3 270)
 		(unit 1)
@@ -4049,7 +4074,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Misi:C_Polstarek_L12mm_W2mm_P5mm"
 			(at 167.3352 87.63 0)
 			(effects
 				(font
@@ -4092,17 +4117,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 228.6 62.23 90)
+		(lib_id "Device:LED_Series")
+		(at 228.6 64.77 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4cae0e09-3d2d-4187-a7ad-c1a76db56252")
+		(uuid "467d8f7b-0a59-4060-842f-08953f0d0661")
 		(property "Reference" "D1"
-			(at 231.521 62.6054 90)
+			(at 230.632 63.3038 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4110,8 +4135,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "RED"
-			(at 231.521 65.0296 90)
+		(property "Value" "LED eyes"
+			(at 230.632 65.7281 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4120,7 +4145,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 228.6 62.23 0)
+			(at 228.6 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4129,7 +4154,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 228.6 62.23 0)
+			(at 228.6 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4137,8 +4162,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 228.6 62.23 0)
+		(property "Description" "Several LEDs in series"
+			(at 228.6 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4147,13 +4172,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "b6ece59f-f21c-4c27-9602-0a0a78b754b4")
+			(uuid "5c346277-6015-4aa0-abdd-020389c31e6c")
 		)
 		(pin "2"
-			(uuid "c8d1408d-e799-4880-8d6c-d53391b92a29")
+			(uuid "f58a0806-d059-4612-9c53-bd661fbd71f3")
 		)
 		(instances
-			(project "devil-box"
+			(project ""
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
 					(reference "D1")
 					(unit 1)
