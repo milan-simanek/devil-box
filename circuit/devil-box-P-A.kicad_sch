@@ -3692,7 +3692,7 @@
 		(fields_autoplaced yes)
 		(uuid "5345183a-54af-4169-810d-ed5c187dfc7c")
 		(property "Reference" "T4"
-			(at 115.697 53.3979 0)
+			(at 115.697 53.3978 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3700,7 +3700,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IRF9540N"
+		(property "Value" "IRF9Z34N"
 			(at 115.697 55.8221 0)
 			(effects
 				(font
