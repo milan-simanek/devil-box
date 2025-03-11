@@ -3209,7 +3209,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 129.54) (xy 228.6 129.54)
+			(xy 223.52 129.54) (xy 232.41 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3339,7 +3339,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 127) (xy 228.6 127)
+			(xy 223.52 127) (xy 232.41 127)
 		)
 		(stroke
 			(width 0)
@@ -3349,7 +3349,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 124.46) (xy 228.6 124.46)
+			(xy 193.04 124.46) (xy 232.41 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3667,9 +3667,38 @@
 		)
 		(uuid "fb94a3ec-739e-4053-9afe-54c4a7bb0ddd")
 	)
+	(text "orange"
+		(exclude_from_sim no)
+		(at 227.584 123.698 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "19c22e8a-ec68-4e15-8177-b058580b37f6")
+	)
+	(text "brown\n"
+		(exclude_from_sim no)
+		(at 227.584 128.778 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6b20c086-d584-40c0-a0a8-3f5f9978132d")
+	)
+	(text "red"
+		(exclude_from_sim no)
+		(at 227.584 126.238 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c0f1d7ad-3769-47d6-bf9f-a1af0b539145")
+	)
 	(label "PB3_OC2A"
 		(at 196.85 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3680,7 +3709,6 @@
 	)
 	(label "GND"
 		(at 146.05 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3691,7 +3719,6 @@
 	)
 	(label "BAT+"
 		(at 52.07 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3702,7 +3729,6 @@
 	)
 	(label "OC0B"
 		(at 196.85 109.22 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3713,7 +3739,6 @@
 	)
 	(label "Vcc"
 		(at 146.05 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5011,7 +5036,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 236.22 127 0)
+		(at 240.03 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5020,7 +5045,7 @@
 		(fields_autoplaced yes)
 		(uuid "f4041dbd-3979-4252-b8aa-aad6640edce6")
 		(property "Reference" "M1"
-			(at 244.5798 125.3545 0)
+			(at 248.3898 125.3545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5029,7 +5054,7 @@
 			)
 		)
 		(property "Value" "Motor_Servo"
-			(at 244.5798 127.7787 0)
+			(at 248.3898 127.7787 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5038,7 +5063,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 236.22 131.826 0)
+			(at 240.03 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5047,7 +5072,7 @@
 			)
 		)
 		(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
-			(at 236.22 131.826 0)
+			(at 240.03 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5056,7 +5081,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 236.22 127 0)
+			(at 240.03 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
