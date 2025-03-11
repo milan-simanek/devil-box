@@ -3783,7 +3783,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "24adbebd-d7ce-4161-8e8d-16f7e98683c2")
-		(property "Reference" "TS1"
+		(property "Reference" "SW1"
 			(at 86.233 95.3078 90)
 			(effects
 				(font
@@ -3792,16 +3792,17 @@
 				(justify right)
 			)
 		)
-		(property "Value" "SW-520D"
+		(property "Value" "~"
 			(at 86.233 97.7321 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 80.01 96.52 0)
 			(effects
 				(font
@@ -3837,7 +3838,7 @@
 		(instances
 			(project "devil-box"
 				(path "/c6112e97-0a50-4811-b9a7-b9d8fe3a9480"
-					(reference "TS1")
+					(reference "SW1")
 					(unit 1)
 				)
 			)
