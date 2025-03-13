@@ -41,3 +41,7 @@ P-B -> P->C
 - better component placement in schematics
 - change A7->A0 (A7 is analog in put only)
 - change T4: IRF9Z34N
+- improve power supply for Arduino by schottky D1
+  (internal linear power regulater has voltage drop 1.2V [datasheet max 2V])
+- add C3 to limit interference voltage spikes
+
