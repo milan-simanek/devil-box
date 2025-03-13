@@ -39,3 +39,5 @@ P-B -> P->C
 
 - add R6 10k - Arduino can detect unexpected box motion
 - better component placement in schematics
+- change A7->A0 (A7 is analog in put only)
+- change T4: IRF9Z34N

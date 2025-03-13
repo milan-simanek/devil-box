@@ -5053,7 +5053,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Motor_Servo"
+		(property "Value" "servo SG90"
 			(at 248.3898 127.7787 0)
 			(effects
 				(font
