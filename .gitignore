@@ -38,6 +38,8 @@
 *.kicad_pcb-bak
 *.kicad_prl
 *.sch-bak
+~*.lck
+\#auto_saved_files\#
 DEADJOE
 
 # compiled executables
