@@ -25,7 +25,7 @@
 #define SERVO_PIN         11    // D11  PWM OCR2A (PB3)
 
 
-#define SENSOR_TO 200 // [ms] sensor signal glitches protection period
+#define SENSOR_TO 0 // [ms] sensor signal glitches protection period
 
 #ifdef DBG
  #define dbg(a) Serial.print(a)
@@ -40,6 +40,7 @@
  #define LED0     do {} while(0)
  #define LED_     do {} while(0)
 #endif
+
 //#define TRY(fnc, debugMsg) do if (fnc) return true; while(0)
 #define TRY(fnc) do if (fnc) return true; while(0)
 
@@ -61,6 +62,7 @@ bool safeDelay(unsigned ms) {
     static char prevState=BOX_UNKNOWN;
 
     char newState=digitalRead(SENSOR_PIN);
+    if (newState) LED1; else LED0;
     if (nextPossibleChangeTime<t) boxState=newState;
 
     if (prevState!=newState) {
@@ -141,81 +143,113 @@ class Door : protected Servo {
     static const uchar DOORCLOSE = 120;
     static const uchar DOOROPEN  = 90;
     static const int SPEED     = 600;   // steps/min
-  public: 
-    Door() : Servo() {
-      servoAngle(DOORCLOSE);
+
+  protected: 
+  Door() : Servo() {
+    servoAngle(DOORCLOSE);
+  }
+
+  bool open() {
+    const char direction=DOORCLOSE<DOOROPEN ? 1 : -1;
+    uchar angle = DOORCLOSE;
+    dbgln("Door::open()");
+    TRY(safeDelay(0));      // do not touch servo, if the box is manipulated
+    while(angle!=DOOROPEN) {
+      angle+=direction;
+      servoAngle(angle);
+      TRY(safeDelay(60000/SPEED));
     }
-    bool open() {
-      const char direction=DOORCLOSE<DOOROPEN ? 1 : -1;
-      uchar angle = DOORCLOSE;
-      while(angle!=DOOROPEN) {
-        angle+=direction;
-        servoAngle(angle);
-        TRY(safeDelay(60000/SPEED));
-      }
-      dbgln("opened.");
-      return false;
-    }
-    void close() {
-      servoAngle(DOORCLOSE);
-    }
+    dbgln("Door::open()->false");
+    return false;
+  }
+  
+  void close() {
+    servoAngle(DOORCLOSE);
+  }
 };
 
 class Devil : protected Door {
-  static const uchar TotalShows = 3;
-  static const uchar TotalActivities = 3;
-  static const int DelayAfterDoorOpen = 300;
-  static const int DelayBetweenShows = 5000;
-  static const int DelayBetweenActivities = 30000;
+  static const uchar TotalShows = 3;                // a show = open door + blink eyes + close door
+  static const uchar TotalActivities = 3;           // an activity = several shows
+  static const int DelayBeforeFirstBlink = 300;     // delay between door open and first eye blink
+  static const int DelayBetweenShows = 5000;        // delay between door close and next door open
+  static const int DelayBetweenActivities = 30000;  // after a time the devil wakes up again
+  static const int DelayAfterDoorClose = 30000;     // the first activity after user touches a box
+
   public:
   Devil() : Door() {
     pinMode(EYES_PIN, OUTPUT); 
     digitalWrite(EYES_PIN, EYES_INACTIVE);
   }
+
   private:
-  void blinkEyes(uchar count) {
+  bool blinkEyes(uchar count) {
     //                   ON  OFF ON  OFF ON  END
     unsigned timing[] = {700,500,300,200,800,0};
     dbg("Devil::blinkEyes(");dbg((int)count);dbgln(")");
     count<<=1;
-    digitalWrite(EYES_PIN, EYES_ACTIVE);
+    
     for(uchar i=0; --count; i++) { 
       unsigned ms;
       ms=timing[i];
-      if (!ms || safeDelay(ms)) {
-        digitalWrite(EYES_PIN, EYES_INACTIVE);
-        return;
-      }
-      digitalWrite(EYES_PIN, i&1 ? EYES_ACTIVE : EYES_INACTIVE);
+      if (!ms) break;
+      digitalWrite(EYES_PIN, i&1 ? EYES_INACTIVE : EYES_ACTIVE);
+      if (safeDelay(ms)) break;
     };
+    digitalWrite(EYES_PIN, EYES_INACTIVE);
+    dbg("Devil::blinkEyes()->"); dbgln(count>0 ? "true" : "false");
+    return count>0;
   }
 
-  void show(uchar n) {
+  bool show(uchar n) {
     dbg("Devil::show(");dbg((int)n);dbgln(")");
-    if (!open()) if (!safeDelay(DelayAfterDoorOpen)) blinkEyes(n);
+    if (!open()) 
+      if (!safeDelay(DelayBeforeFirstBlink)) 
+        if (!blinkEyes(n)) { 
+          close(); 
+          dbgln("Devil::show()->false");
+          return false; 
+        }
     close();
+    return true;
   }
 
   bool activity() {
     dbgln("Devil::activity()");
     for(uchar n=1;n<=TotalShows;n++) {
-      show(n);
+      TRY(show(n));
       TRY(safeDelay(DelayBetweenShows));
     }
+    dbgln("Devil::activity() -> false");
     return false;
   }
 
-  public: 
-  bool live() {
-    dbgln("Devil::live()");
-    for(uchar n=TotalActivities;; n--) {
+  bool allActivities() {
+    dbgln("Devil::allActivities()");
+    for(uchar n=TotalActivities; --n;) {
       TRY(activity());
       TRY(safeDelay(DelayBetweenActivities));
     }
     return activity();
   }
 
+  void waitForBoxClose() {
+    do {
+      delay(1000);  // not to be too fast loop for debug messages
+      dbgln("waiting for door close");
+    } while (safeDelay(DelayAfterDoorClose));
+    dbgln("door closed by the user -> continue");
+  }
+
+  public:
+  void go() {
+    while (allActivities()) waitForBoxClose();
+  }
+
   ~Devil() {
+    dbgln("POWEROFF");
+    LED1;
+    delay(1000);  // stabilize power from servo glithes
     pinMode(PWROFF_PIN, OUTPUT);
     digitalWrite(PWROFF_PIN, PWROFF_ACTIVE);
     safeDelay(65535); // this should never happen
@@ -235,5 +269,5 @@ void setup() {
 void loop() {
   Devil devil;
   dbgln("main loop starts");
-  while (devil.live()) while (safeDelay(10000)) {dbgln("waiting for door close"); delay(1000); }
+  devil.go();
 }
