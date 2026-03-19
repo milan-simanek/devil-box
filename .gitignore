@@ -35,9 +35,6 @@
 # Backup files
 *-backup
 *.bak
-*.kicad_pcb-bak
-*.kicad_prl
-*.sch-bak
 ~*.lck
 \#auto_saved_files\#
 DEADJOE
@@ -45,6 +42,23 @@ DEADJOE
 # compiled executables
 *.map
 
-# kicad backups
+# kicad
 *-backups
+*.kicad_pcb-bak
+*.kicad_prl
+*.sch-bak
+fp-info-cache
 
+# AVR related
+.avrdefs.h
+.timer-config
+_timer-config.h
+eeprom.bin*
+crccalc
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+# !.vscode/settings.json   # only if project-level settings exist
